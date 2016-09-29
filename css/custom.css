@@ -1,5 +1,5 @@
-#article-frame{
-	min-height: 500px;
+#article-display{
+	height: 500px;
 	display: flex;
 	align-items: center;
 }
@@ -10,4 +10,8 @@
 
 	display: flex;
 	align-items: center;
+};
+
+.product-image{
+	max-width: 100%;
 }
