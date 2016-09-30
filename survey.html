@@ -14,13 +14,16 @@
 	<link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-	<div class="vertical-center">
-		<div id="payment-frame" class="container">
-			<div class="col-xs-12 text-center">
-				<h1>U gaat straks betalen met <span id="payment-method"></span>.
+	<div id="main" class="vertical-center container">
+		<div id="payment-method-frame">
+			
+		</div>
+		<div id="payment-frame" class="center-block">
+			<div id="payment-display" class="col-xs-12 text-center">
+				<h1>U gaat straks betalen met <span id="payment-method"></span>.</h1>
 			</div>
 		</div>
-		<div id="article-frame" class="container" style="display: none">
+		<div id="article-frame" class="center-block" style="display: none">
 			<div id="article-display" class="row">
 				<div class="col-xs-12">
 					<div id="article" style="max-height: 100%; display: none;"></div>
@@ -44,12 +47,12 @@
 				</div>
 			</div>
 		</div>
-		<div id="finished-frame" class="container" style="display:none">
+		<div id="finished-frame" class="center-block" style="display:none">
 			<div class="col-xs-12 text-center">
 				<h1>Einde van het experiment!<br/><br/>Bedankt voor uw deelname.</h1>
 			</div>
 		</div>
-    </div><!-- /.container -->
+    </div>
 </body>
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>

@@ -68,3 +68,21 @@ shuffle(articles);
 
 var payment_condition = payment_conditions[Math.floor(Math.random() * 
 	payment_conditions.length)];
+
+payment_condition_img = new Image();
+
+switch(payment_condition){
+	case "contant geld":
+		payment_condition_img.src = 'img/Euro_banknotes.png';
+		break;
+	case "pinpas":
+		payment_condition_img.src = "img/pinpas.jpg";
+		break;
+	case "credit card":
+		payment_condition_img.src = "img/credit-cards.jpg";
+		break;
+	case "contactloos betalen":
+		payment_condition_img.src = "img/contactloos-betalen.jpg";
+		break;
+}
+

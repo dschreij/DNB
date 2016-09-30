@@ -15,3 +15,13 @@
 .product-image{
 	max-width: 100%;
 }
+
+#main{
+	position: relative;
+}
+
+#payment-method-frame{
+	position: absolute;
+	min-width: 100%;
+	min-height: 100%;
+}

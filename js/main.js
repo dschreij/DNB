@@ -54,10 +54,31 @@ $("#skip").click( function(event) {
 
 $("#payment-method").text(payment_condition);
 
+var payment_dom = $(payment_condition_img);
+payment_dom.css('width','300px');
+
+payment_dom.css('right','400px');
+payment_dom.css('top','200px');
+
+$("#payment-method-frame").append(payment_dom);
+payment_dom.css('position','absolute');
+
 setTimeout(function(){
-	$("#payment-frame").fadeOut('fast', function(){
-		present_next_article();
-		$("#article-frame").fadeIn('fast');
-	});
+	payment_dom.animate(
+		{
+			top: "20px",
+			right: "20px",
+			width: "100px",
+		},
+		1000,
+		function(){
+			$("#payment-frame").fadeOut('fast', function(){
+				present_next_article();
+				$("#article-frame").fadeIn('fast');
+			});
+		}
+	)
+
+
 }, 2000);
 
