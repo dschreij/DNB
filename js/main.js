@@ -2,15 +2,56 @@ var responses = [];
 var article;
 var t_start = performance.now();
 
+/**
+ * Start the experiment. Activated after user presses the start button
+ * @return {void}
+ */
+function start_experiment(){
+	var animation_length = 1000;
+	$("#payment-frame").css("z-index", -1);
+	$("#payment-controls").animate({opacity: 0}, 200, 
+		function() {
+			$("#payment-display").animate(
+				{
+					"margin-top": 0,
+					"top": "20px",
+					"right": "20px",
+					"width": "150px",
+				},
+				animation_length,
+				function(){
+					prepare_for_next();
+					$("#article-frame").fadeIn(200);
+				}
+			);
+
+			payment_img_dom.animate(
+				{ width: "100%" }, animation_length
+			);
+			$("#payment-message").hide();
+		}
+	)
+}
+
+/**
+ * Sends responses to server
+ * @return {void}
+ */
 function submit_responses(){
 	console.log(responses);
 }
 
+/**
+ * Presents the next article in the queue. If no articles are left, trigger the
+ * submit_response() function
+ * @return {void}
+ */
 function present_next_article(){
 	article = articles.shift();
 	// If the article list is empty, the experiment is finished
 	if(article === undefined){
 		$("#article-frame").hide();
+		$("#payment-frame").fadeOut('fast');
 		$("#finished-frame").fadeIn('slow');
 		submit_responses();
 		return;
@@ -27,6 +68,10 @@ function present_next_article(){
 	}
 }
 
+/**
+ * Prepare for presentation of next article in queue
+ * @return {void}
+ */
 function prepare_for_next(){
 	//Disable buttons
 	$("#buy").addClass('disabled');
@@ -35,6 +80,12 @@ function prepare_for_next(){
 	$("#price-row").hide();
 	present_next_article();
 }
+
+/** Event handling **/
+
+$("#start-button").click(function(event) {
+	start_experiment();
+});
 
 $("#buy").click( function(event) {
 	event.preventDefault();
@@ -52,33 +103,9 @@ $("#skip").click( function(event) {
 	prepare_for_next();
 });
 
+/** Set up DOM in relation to variables. */
 $("#payment-method").text(payment_condition);
-
-var payment_dom = $(payment_condition_img);
-payment_dom.css('width','300px');
-
-payment_dom.css('right','400px');
-payment_dom.css('top','200px');
-
-$("#payment-method-frame").append(payment_dom);
-payment_dom.css('position','absolute');
-
-setTimeout(function(){
-	payment_dom.animate(
-		{
-			top: "20px",
-			right: "20px",
-			width: "100px",
-		},
-		1000,
-		function(){
-			$("#payment-frame").fadeOut('fast', function(){
-				present_next_article();
-				$("#article-frame").fadeIn('fast');
-			});
-		}
-	)
-
-
-}, 2000);
+var payment_img_dom = $(payment_condition_img);
+payment_img_dom.css('width','400px');
+$("#payment-display").prepend(payment_img_dom);
 

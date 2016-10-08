@@ -4,23 +4,21 @@
 	<meta charset="UTF-8">
 	<title>DNB Survey</title>
 	
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
+	<script src="js/jquery.min.js"></script>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+	<script src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
 	<div id="main" class="vertical-center container">
-		<div id="payment-method-frame">
-			
-		</div>
-		<div id="payment-frame" class="center-block">
+		<div id="payment-frame" class="center-block vertical-center">
 			<div id="payment-display" class="col-xs-12 text-center">
-				<h1>U gaat straks betalen met <span id="payment-method"></span>.</h1>
+				<div id="payment-controls">
+					<h1 id="payment-message">U gaat straks betalen met <span id="payment-method"></span>.</h1>
+					<a id="start-button" href="#" class="btn btn-primary btn-lg">Begin met boodschappen doen</a>
+				</div>
 			</div>
 		</div>
 		<div id="article-frame" class="center-block" style="display: none">
