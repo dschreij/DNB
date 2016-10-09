@@ -66,11 +66,13 @@ for(var i = 0; i < articles.length; i++){
 // Randomize order
 shuffle(articles);
 
+// Pick payment method randomly
 var payment_condition = payment_conditions[Math.floor(Math.random() * 
 	payment_conditions.length)];
 
+// Create a DOM image and load the approriate source for the selected payment
+// method.
 payment_condition_img = new Image();
-
 switch(payment_condition){
 	case "contant geld":
 		payment_condition_img.src = 'img/Euro_banknotes.png';
