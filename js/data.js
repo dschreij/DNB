@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Shuffles array in place.
  * @param {Array} a items The array containing the items.
@@ -14,44 +15,126 @@ function shuffle(a) {
 
 // Variable to store the data in.
 var articles = [
-{
-	name: "Chips",
-	image: "img/Chips.jpeg",
-	price: "1,69",
-	category: "vice"
-},{
-	name: "Apple",
-	image: "img/apple.png",
-	price: "1,99",
-	category: "virtue"
-},{
-	name: "Pineapple",
-	image: "img/pineapple.png",
-	price: "2,99",
-	category: "virtue"
-},{
-	name: "Snickers",
-	image: "img/snickers.png",
-	price: "1,00",
-	category: "vice"
-},{
-	name: "Magnum",
-	image: "img/magnum.png",
-	price: "1,50",
-	category: "vice"
-},{
-	name: "Strawberries",
-	image: "img/strawberries.png",
-	price: "2,49",
-	category: "virtue"
-}
+	{
+		name: "Special K original",
+		image: "img/special k cereal.jpg",
+		price: 2.99,
+		category: "virtue"
+	},{
+		name: "Perzikschijven",
+		image: "img/perziken.JPG",
+		price: 2.59,
+		category: "virtue"
+	},{
+		name: "Kelloggs honey pops",
+		image: "img/cereal honey.JPG",
+		price: 3.09,
+		category: "vice"
+	},{
+		name: "Oreo cookies, white chocolate",
+		image: "img/oreo wit.JPG",
+		price: 2.17,
+		category: "vice"
+	},{
+		name: "Almhof 0% yoghurt",
+		image: "img/yoghurt.JPG",
+		price: 1.25,
+		category: "virtue"
+	},{
+		name: "Havermout",
+		image: "img/havermout.JPG",
+		price: 2.19,
+		category: "virtue"
+	},{
+		name: "Cruesli naturel",
+		image: "img/cruesli.jpg",
+		price: 3.49,
+		category: "virtue"
+	},{
+		name: "Spa water",
+		image: "img/water.JPG",
+		price: 1.65,
+		category: "virtue"
+	},{
+		name: "Volkoren brood",
+		image: "img/brood.JPG",
+		price: 2.09,
+		category: "virtue"
+	},{
+		name: "Muffin",
+		image: "img/muffin.JPG",
+		price: 2.49,
+		category: "vice"
+	},{
+		name: "Blikje coca cola",
+		image: "img/coca cola regular.jpg",
+		price: 0.57,
+		category: "vice"
+	},{
+		name: "Warme chocolade melk",
+		image: "img/chocolate.JPG",
+		price: 1.58,
+		category: "vice"
+	},{
+		name: "Oreo cookies",
+		image: "img/oreo.JPG",
+		price: 1.25,
+		category: "vice"
+	},{
+		name: "Carrot cake",
+		image: "img/carrotcake.JPG",
+		price: 2.99,
+		category: "vice"
+	},{
+		name: "Granola havervlokken",
+		image: "img/granola.JPG",
+		price: 1.99,
+		category: "virtue"
+	},{
+		name: "Bonen in tomatensaus",
+		image: "img/baked bean.JPG",
+		price: 1.57,
+		category: "virtue"
+	},{
+		name: "Appeltaart",
+		image: "img/appeltaart.JPG",
+		price: 3.99,
+		category: "vice"
+	},{
+		name: "Cheesecake",
+		image: "img/cheesecake.JPG",
+		price: 4.99,
+		category: "vice"
+	},{
+		name: "Cake",
+		image: "img/cakeplak.JPG",
+		price: 1.09,
+		category: "vice"
+	},{
+		name: "Time out chocolade koeken",
+		image: "img/choc cookies.JPG",
+		price: 1.79,
+		category: "vice"
+	}
 ];
 
 var payment_conditions = [
-	"contant geld",
-	"pinpas",
-	"credit card",
-	"contactloos betalen",
+	{
+		"name": "contant geld",
+		"image": "img/Euro_banknotes.png"
+	},
+	{
+		"name": "pinpas",
+		"image": "img/pin-logo.gif"
+	},
+	{
+		"name": "credit card",
+		"image": "img/credit-cards.png"
+	},
+	{
+		"name": "contactloos betalen",
+		"image": "img/contactloos-betalen.jpg"
+	}
 ];
 
 // Preload images
@@ -61,6 +144,7 @@ for(var i = 0; i < articles.length; i++){
 	articles[i].image = img;
 	$(img).addClass('img-responsive');
 	$(img).addClass('center-block');
+	$(img).css('max-height','450px');
 }
 
 // Randomize order
@@ -72,19 +156,6 @@ var payment_condition = payment_conditions[Math.floor(Math.random() *
 
 // Create a DOM image and load the approriate source for the selected payment
 // method.
-payment_condition_img = new Image();
-switch(payment_condition){
-	case "contant geld":
-		payment_condition_img.src = 'img/Euro_banknotes.png';
-		break;
-	case "pinpas":
-		payment_condition_img.src = "img/pinpas.jpg";
-		break;
-	case "credit card":
-		payment_condition_img.src = "img/credit-cards.jpg";
-		break;
-	case "contactloos betalen":
-		payment_condition_img.src = "img/contactloos-betalen.jpg";
-		break;
-}
+var payment_condition_img = new Image();
+payment_condition_img.src = payment_condition.image
 

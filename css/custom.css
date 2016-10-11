@@ -30,3 +30,13 @@
 	margin: 0px auto;
 	position: absolute;
 }
+
+#article{
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+
+#article-price{
+	line-height: 50pt;
+}

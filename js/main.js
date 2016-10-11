@@ -1,4 +1,12 @@
-var responses = [];
+"use strict";
+
+// Create data object
+var data = {
+	"subject_nr": 1,
+	"payment_condition": payment_condition.name,
+	"responses": [],
+}; 
+
 var article;
 var t_start = performance.now();
 
@@ -20,6 +28,7 @@ function start_experiment(){
 				},
 				animation_length,
 				function(){
+					$("#payment-display").append("<p class=\"lead\">"+payment_condition.name+"</p>");
 					prepare_for_next();
 					$("#article-frame").fadeIn(200);
 				}
@@ -28,7 +37,7 @@ function start_experiment(){
 			payment_img_dom.animate(
 				{ width: "100%" }, animation_length
 			);
-			$("#payment-message").hide();
+			$("#payment-controls").hide();
 		}
 	)
 }
@@ -38,7 +47,7 @@ function start_experiment(){
  * @return {void}
  */
 function submit_responses(){
-	console.log(responses);
+	console.log(data);
 }
 
 /**
@@ -58,6 +67,7 @@ function present_next_article(){
 	}else{
 		// Show the next article
 		$("#article").html(article.image);
+		$("#article-name").text(article.name);
 		$("#price").text(article.price);
 		$("#article").fadeIn('medium', function(){
 			$("#buy").removeClass('disabled');
@@ -91,7 +101,7 @@ $("#buy").click( function(event) {
 	event.preventDefault();
 	article.decision_time = Math.round(event.timeStamp - t_start);
 	article.choice = "take";
-	responses.push(article);
+	data.responses.push(article);
 	prepare_for_next();
 });
 
@@ -99,12 +109,12 @@ $("#skip").click( function(event) {
 	event.preventDefault();
 	article.decision_time = Math.round(event.timeStamp - t_start);
 	article.choice = "leave";
-	responses.push(article);
+	data.responses.push(article);
 	prepare_for_next();
 });
 
 /** Set up DOM in relation to variables. */
-$("#payment-method").text(payment_condition);
+$("#payment-method").text(payment_condition.name);
 var payment_img_dom = $(payment_condition_img);
 payment_img_dom.css('width','400px');
 $("#payment-display").prepend(payment_img_dom);
