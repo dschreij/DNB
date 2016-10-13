@@ -16,28 +16,15 @@ var t_start = performance.now();
  */
 function start_experiment(){
 	var animation_length = 1000;
-	$("#payment-frame").css("z-index", -1);
-	$("#payment-controls").animate({opacity: 0}, 200, 
-		function() {
-			$("#payment-display").animate(
-				{
-					"margin-top": 0,
-					"top": "20px",
-					"right": "20px",
-					"width": "150px",
-				},
-				animation_length,
-				function(){
-					$("#payment-display").append("<p class=\"lead\">"+payment_condition.name+"</p>");
-					prepare_for_next();
-					$("#article-frame").fadeIn(200);
-				}
-			);
-
-			payment_img_dom.animate(
-				{ width: "100%" }, animation_length
-			);
-			$("#payment-controls").hide();
+	$("#introduction-frame").fadeOut(300,
+		function(){
+			$("#payment-reminder-image").append(payment_img_dom);
+			$("#payment-reminder-text").text(payment_condition.name);
+			$("#payment-reminder").show();
+			setTimeout(function(){
+				prepare_for_next();
+				$("#article-frame").fadeIn(200);
+			}, 1000);
 		}
 	)
 }
@@ -116,6 +103,7 @@ $("#skip").click( function(event) {
 /** Set up DOM in relation to variables. */
 $("#payment-method").text(payment_condition.name);
 var payment_img_dom = $(payment_condition_img);
-payment_img_dom.css('width','400px');
-$("#payment-display").prepend(payment_img_dom);
+payment_img_dom.css('width','100%');
+payment_img_dom.addClass('center-block');
+$("#payment-image").append(payment_img_dom);
 

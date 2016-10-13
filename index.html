@@ -9,43 +9,54 @@
 	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div id="main" class="vertical-center container">
-		<div id="payment-frame" class="center-block vertical-center">
-			<div id="payment-display" class="col-xs-12 text-center">
-				<div id="payment-controls">
-					<h1 id="payment-message">U gaat straks betalen met <span id="payment-method"></span>.</h1>
-					<a id="start-button" href="#" class="btn btn-primary btn-lg">Begin met boodschappen doen</a>
-				</div>
+	<div id="main" class="container">
+		<div class="row" style="position: relative;">
+			<div id="payment-reminder" class="text-center">
+				<div id="payment-reminder-image" class="center-block"></div>
+				<p id="payment-reminder-text" class="lead"></p>
 			</div>
-		</div>
-		<div id="article-frame" class="center-block" style="display: none">
-			<div id="article-display" class="row">
-				<div class="col-xs-12">
-					<div id="article"></div>
+			<div class="col-xs-12 vertical-center">
+				<div id="introduction-frame" class="center-block">
+					<div class="row">
+						<div id="payment-image" class="center-block"></div>
+					</div>
+					<div id="introduction" class="row">
+						<div class="col-xs-12 text-center">
+							<h1 id="payment-message">U gaat straks betalen met <span id="payment-method"></span>.</h1>
+							<a id="start-button" href="#" class="btn btn-primary btn-lg">Begin met boodschappen doen</a>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div id="price-row" class="row" style="display: none;">
-				<div class="col-xs-12 text-center">
-					<p class="lead" id="article-name"></p>
-					<h1 id="article-price">&euro; <span id="price">3,99</span></h1>
+				<div id="article-frame" class="center-block">
+					<div id="article-display" class="row">
+						<div class="col-xs-12">
+							<div id="article"></div>
+						</div>
+					</div>
+					<div id="price-row" class="row">
+						<div class="col-xs-12 text-center">
+							<p class="lead" id="article-name"></p>
+							<h1 id="article-price">&euro; <span id="price">3,99</span></h1>
+						</div>
+					</div>
+					<div id="buttons" class="row">
+						<div class="col-xs-6 text-right">
+							<a id="buy" href="#" class="btn btn-primary btn-lg">
+								<span class="glyphicon glyphicon-shopping-cart"></span> Neem mee
+							</a>
+						</div>
+						<div class="col-xs-6">
+							<a id="skip" href="#" class="btn btn-default btn-lg">
+								Laat liggen <span class="glyphicon glyphicon-hand-right"></span>
+							</a>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div id="buttons" class="row">
-				<div class="col-xs-6 text-right">
-					<a id="buy" href="#" class="btn btn-primary btn-lg">
-						<span class="glyphicon glyphicon-shopping-cart"></span> Neem mee
-					</a>
+				<div id="finished-frame" class="center-block">
+					<div class="col-xs-12 text-center">
+						<h1>Einde van het experiment!<br/><br/>Bedankt voor uw deelname.</h1>
+					</div>
 				</div>
-				<div class="col-xs-6">
-					<a id="skip" href="#" class="btn btn-default btn-lg">
-						Laat liggen <span class="glyphicon glyphicon-hand-right"></span>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div id="finished-frame" class="center-block" style="display:none">
-			<div class="col-xs-12 text-center">
-				<h1>Einde van het experiment!<br/><br/>Bedankt voor uw deelname.</h1>
 			</div>
 		</div>
     </div>
