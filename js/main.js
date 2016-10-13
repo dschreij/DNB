@@ -47,7 +47,7 @@ function present_next_article(){
 	// If the article list is empty, the experiment is finished
 	if(article === undefined){
 		$("#article-frame").hide();
-		$("#payment-frame").fadeOut('fast');
+		$("#payment-reminder").fadeOut('fast');
 		$("#finished-frame").fadeIn('slow');
 		submit_responses();
 		return;

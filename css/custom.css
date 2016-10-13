@@ -1,3 +1,5 @@
+img { -ms-interpolation-mode: bicubic; }
+
 #article-display,
 #payment-display{
 	display: flex;
