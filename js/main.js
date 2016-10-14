@@ -18,6 +18,7 @@ function start_experiment(){
 	var animation_length = 1000;
 	$("#introduction-frame").fadeOut(300,
 		function(){
+			payment_img_dom.css('width','100%');
 			$("#payment-reminder-image").append(payment_img_dom);
 			$("#payment-reminder-text").text(payment_condition.name);
 			$("#payment-reminder").show();
@@ -103,7 +104,6 @@ $("#skip").click( function(event) {
 /** Set up DOM in relation to variables. */
 $("#payment-method").text(payment_condition.name);
 var payment_img_dom = $(payment_condition_img);
-payment_img_dom.css('width','100%');
-payment_img_dom.addClass('center-block');
+payment_img_dom.addClass('img-responsive center-block');
 $("#payment-image").append(payment_img_dom);
 
