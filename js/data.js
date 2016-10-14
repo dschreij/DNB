@@ -121,19 +121,23 @@ var articles = [
 var payment_conditions = [
 	{
 		"name": "contant geld",
-		"image": "img/Euro_banknotes.png"
+		"image": "img/Euro_banknotes.png",
+		"intro": "Please note that this store accepts CASH PAYMENTS ONLY. They do not accept credit cards or checks. <br><br/>You will have to bring enough cash to the store so that you can give cash for all the products that you purchase from this store."
 	},
 	{
 		"name": "pinpas",
-		"image": "img/pin-logo.gif"
+		"image": "img/pin-logo.gif",
+		"intro": "Bij deze winkel wordt u verzocht te pinnen."
 	},
 	{
 		"name": "credit card",
-		"image": "img/credit-cards.png"
+		"image": "img/credit-cards.png",
+		"intro": "This store accepts all major credit cards."
 	},
 	{
 		"name": "contactloos betalen",
-		"image": "img/contactloos-betalen.jpg"
+		"image": "img/contactloos-betalen.jpg",
+		"intro": "Deze winkel biedt contactloos betalen."
 	}
 ];
 
@@ -144,7 +148,8 @@ for(var i = 0; i < articles.length; i++){
 	articles[i].image = img;
 	$(img).addClass('img-responsive');
 	$(img).addClass('center-block');
-	$(img).css('max-height','450px');
+	$(img).css('max-height','auto');
+	$(img).css('width','100%');
 }
 
 // Randomize order

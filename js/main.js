@@ -15,7 +15,6 @@ var t_start = performance.now();
  * @return {void}
  */
 function start_experiment(){
-	var animation_length = 1000;
 	$("#introduction-frame").fadeOut(300,
 		function(){
 			payment_img_dom.css('width','100%');
@@ -85,6 +84,12 @@ $("#start-button").click(function(event) {
 	start_experiment();
 });
 
+$("#next-intro").click(function(event){
+	$("#general-intro").fadeOut(200, function(){
+		$("#payment-intro").fadeIn(200);
+	});
+});
+
 $("#buy").click( function(event) {
 	event.preventDefault();
 	article.decision_time = Math.round(event.timeStamp - t_start);
@@ -102,7 +107,7 @@ $("#skip").click( function(event) {
 });
 
 /** Set up DOM in relation to variables. */
-$("#payment-method").text(payment_condition.name);
+$("#payment-intro-text").html(payment_condition.intro);
 var payment_img_dom = $(payment_condition_img);
 payment_img_dom.addClass('img-responsive center-block');
 $("#payment-image").append(payment_img_dom);
