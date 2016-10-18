@@ -122,7 +122,9 @@ var payment_conditions = [
 	{
 		"name": "contant geld",
 		"image": "img/Euro_banknotes.png",
-		"intro": "Please note that this store accepts CASH PAYMENTS ONLY. They do not accept credit cards or checks. <br><br/>You will have to bring enough cash to the store so that you can give cash for all the products that you purchase from this store."
+		"intro": "Bij deze winkel kunt u alleen CONTANT BETALEN. \
+		Electronische betaalmiddelen worden niet geaccepteerd.<br><br/>U zult genoeg \
+		contant geld mee moeten nemen om te kunnen betalen."
 	},
 	{
 		"name": "pinpas",
@@ -132,12 +134,12 @@ var payment_conditions = [
 	{
 		"name": "credit card",
 		"image": "img/credit-cards.png",
-		"intro": "This store accepts all major credit cards."
+		"intro": "Deze winkel accepteert alle bekende credit cards."
 	},
 	{
 		"name": "contactloos betalen",
 		"image": "img/contactloos-betalen.jpg",
-		"intro": "Deze winkel biedt contactloos betalen."
+		"intro": "Bij deze winkel kunt u contactloos betalen."
 	}
 ];
 
