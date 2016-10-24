@@ -2,13 +2,37 @@
 
 // Create data object
 var data = {
-	"subject_nr": 1,
-	"payment_condition": payment_condition.name,
 	"responses": [],
+	"payment_condition": payment_condition.name["NL"]
 }; 
 
 var article;
 var t_start = performance.now();
+
+function select_language(lang){
+	language = lang;
+	$("#general-intro-" + language.toLowerCase()).show();
+	$("#language-selection-frame").fadeOut(300, function(){
+		$("#introduction-frame").fadeIn(200);
+	});
+
+	if(lang == "NL"){
+		$("#start-button").text("Begin met boodschappen doen");
+		$("#buy").append("Neem mee");
+		$("#skip").prepend("Laat liggen");
+		$("#finished-text").text("U bent klaar met dit onderdeel en wordt nu \
+			doorverwezen naar een vragenlijst.");
+	}else{
+		$("#start-button").text("Start shopping");
+		$("#buy").append("Add to cart");
+		$("#skip").prepend("Continue shopping");
+		$("#finished-text").text("You have finished this part of the study \
+			and are being redirected to a survey");
+	}
+
+	/** Set up DOM in relation to variables. */
+	$("#payment-intro-text").html(payment_condition.intro[lang]);
+}
 
 /**
  * Start the experiment. Activated after user presses the start button
@@ -19,7 +43,7 @@ function start_experiment(){
 		function(){
 			payment_img_dom.css('width','100%');
 			$("#payment-reminder-image").append(payment_img_dom);
-			$("#payment-reminder-text").text(payment_condition.name);
+			$("#payment-reminder-text").text(payment_condition.name[language]);
 			$("#payment-reminder").show();
 			setTimeout(function(){
 				prepare_for_next();
@@ -34,7 +58,24 @@ function start_experiment(){
  * @return {void}
  */
 function submit_responses(){
-	console.log(data);
+	var data_to_submit = {
+		"payment_condition": data.payment_condition.replaceAll(" ","_"),
+		"Q_Language": language
+	};
+	
+	for(var i=0; i<data.responses.length; i++){
+		var item = data.responses[i]
+		var varname = item.name["NL"].toLowerCase().replaceAll(" 0%","").replaceAll(" ","_").replaceAll(",","");
+		data_to_submit[varname + "_pos"] = i+1;
+		data_to_submit[varname + "_choice"] = item.choice;
+		data_to_submit[varname + "_RT"] = item.decision_time;
+		data_to_submit[varname + "_cat"] = item.category;
+		data_to_submit[varname + "_price"] = item.price;
+	}
+	var query_string = $.param(data_to_submit);
+	setTimeout(function(){
+		window.location =  "http://fppvu.qualtrics.com/SE/?SID=SV_6PrL3yqVzqZvxWt&" + query_string;
+	},1000);
 }
 
 /**
@@ -54,7 +95,7 @@ function present_next_article(){
 	}else{
 		// Show the next article
 		$("#article").html(article.image);
-		$("#article-name").text(article.name);
+		$("#article-name").text(article.name[language]);
 		$("#price").text(article.price);
 		$("#article").fadeIn('medium', function(){
 			$("#buy").removeClass('disabled');
@@ -79,12 +120,20 @@ function prepare_for_next(){
 }
 
 /** Event handling **/
+$("#button-dutch").click(function(event) {
+	select_language("NL");
+
+});
+
+$("#button-english").click(function(event) {
+	select_language("EN");
+});
 
 $("#start-button").click(function(event) {
 	start_experiment();
 });
 
-$("#next-intro").click(function(event){
+$(".continue-intro").click(function(event){
 	$("#general-intro").fadeOut(200, function(){
 		$("#payment-intro").fadeIn(200);
 	});
@@ -106,9 +155,6 @@ $("#skip").click( function(event) {
 	prepare_for_next();
 });
 
-/** Set up DOM in relation to variables. */
-$("#payment-intro-text").html(payment_condition.intro);
 var payment_img_dom = $(payment_condition_img);
 payment_img_dom.addClass('img-responsive center-block');
 $("#payment-image").append(payment_img_dom);
-

@@ -6,11 +6,14 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 #payment-intro,
+#introduction-frame,
 #article-frame,
 #article,
 #price-row,
 #finished-frame,
-#payment-reminder {
+#payment-reminder,
+#general-intro-nl,
+#general-intro-en {
 	display: none;
 }
 
