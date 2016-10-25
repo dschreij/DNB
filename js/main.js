@@ -74,7 +74,8 @@ function submit_responses(){
 	}
 	var query_string = $.param(data_to_submit);
 	setTimeout(function(){
-		window.location =  "http://fppvu.qualtrics.com/SE/?SID=SV_6PrL3yqVzqZvxWt&" + query_string;
+		window.location.href = "http://fppvu.qualtrics.com/SE/?SID=SV_6PrL3yqVzqZvxWt&" + query_string;
+		//redirect("http://localhost/~daniel/reftest.php?" + query_string);
 	},1000);
 }
 
