@@ -63,7 +63,7 @@ var articles = [
 			"NL": "Cote d'Or chocolade",
 			"EN": "Cote d'Or chocolate"
 		},
-		image: "img/cote d'or.JPG",
+		image: "img/cote_d_or.jpg",
 		price: 2.69,
 		category: "vice"
 	},{
