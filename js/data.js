@@ -74,27 +74,27 @@ var articles = [
 		category: "virtue"
 	},{
 		name: {
-			"NL": "Perzikschijven",
-			"EN": "Diced peaches"
+			"NL": "Wortels",
+			"EN": "Carrots"
 		},
-		image: "img/perziken.JPG",
-		price: 2.59,
+		image: "img/wortels.JPG",
+		price: 1.39,
 		category: "virtue"
 	},{
 		name: {
-			"NL": "Kelloggs honey pops",
-			"EN": "Kelloggs honey pops"
+			"NL": "Plakjes luxe kaas",
+			"EN": "Slices of deli cheese"
 		},
-		image: "img/cereal honey.JPG",
-		price: 3.09,
-		category: "vice"
+		image: "img/kaas.JPG",
+		price: 4.05,
+		category: "virtue"
 	},{
 		name: {
-			"NL": "Oreo koekjes, witte chocolade",
-			"EN": "Oreo cookies, white chocolate"
+			"NL": "Cote d'or chocolade",
+			"EN": "Cote d'or chocolate"
 		},
-		image: "img/oreo wit.JPG",
-		price: 2.17,
+		image: "img/cote d'or.JPG",
+		price: 2.69,
 		category: "vice"
 	},{
 		name: {

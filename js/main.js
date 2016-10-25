@@ -9,6 +9,11 @@ var data = {
 var article;
 var t_start = performance.now();
 
+/**
+ * Sets the content of translatable elements to the selected language.
+ * @param  {string} lang EN or NL
+ * @return {void}
+ */
 function select_language(lang){
 	language = lang;
 	$("#general-intro-" + language.toLowerCase()).show();
@@ -20,17 +25,16 @@ function select_language(lang){
 		$("#start-button").text("Begin met boodschappen doen");
 		$("#buy").append("Neem mee");
 		$("#skip").prepend("Laat liggen");
-		$("#finished-text").text("U bent klaar met dit onderdeel en wordt nu \
-			doorverwezen naar een vragenlijst.");
+		$("#finished-text").text("Dank u. U wordt nu \
+			doorverwezen naar de vragenlijst.");
 	}else{
 		$("#start-button").text("Start shopping");
 		$("#buy").append("Add to cart");
 		$("#skip").prepend("Continue shopping");
-		$("#finished-text").text("You have finished this part of the study \
-			and are being redirected to a survey");
+		$("#finished-text").text("Thank you. You are now being redirected to \
+			the survey");
 	}
 
-	/** Set up DOM in relation to variables. */
 	$("#payment-intro-text").html(payment_condition.intro[lang]);
 }
 
@@ -65,7 +69,8 @@ function submit_responses(){
 	
 	for(var i=0; i<data.responses.length; i++){
 		var item = data.responses[i]
-		var varname = item.name["NL"].toLowerCase().replaceAll(" 0%","").replaceAll(" ","_").replaceAll(",","");
+		var varname = item.name["NL"].toLowerCase().replaceAll(" 0%","");
+		varname = varname.replaceAll(" ","_").replaceAll(",","").replaceAll("'","");
 		data_to_submit[varname + "_pos"] = i+1;
 		data_to_submit[varname + "_choice"] = item.choice;
 		data_to_submit[varname + "_RT"] = item.decision_time;
@@ -75,7 +80,7 @@ function submit_responses(){
 	var query_string = $.param(data_to_submit);
 	setTimeout(function(){
 		window.location.href = "http://fppvu.qualtrics.com/SE/?SID=SV_6PrL3yqVzqZvxWt&" + query_string;
-		//redirect("http://localhost/~daniel/reftest.php?" + query_string);
+		// redirect("http://localhost/~daniel/reftest.php?" + query_string);
 	},1000);
 }
 

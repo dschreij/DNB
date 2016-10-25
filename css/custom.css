@@ -55,6 +55,10 @@ img { -ms-interpolation-mode: bicubic; }
 	align-items: center;
 }
 
+.btn{
+  margin-bottom: 5px;
+}
+
 /* Generated with Bounce.js. Edit at https://goo.gl/AY40hC */
 
 @-webkit-keyframes animation { 
@@ -116,12 +120,22 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-     /* IE10+ CSS styles go here */
-     #payment-reminder-image{
-     	max-width: 150px;
-     	max-height: auto;
-     }
+  /* IE10+ CSS styles go here */
+  #payment-reminder-image{
+  	max-width: 150px;
+  	max-height: auto;
+  }
 }
 
+@media screen and (max-width: 720px) {
+  #payment-reminder {
+    max-width: 75px;
+  }
+
+  #payment-reminder-image{
+    max-width: 100%;
+    margin-top: 5%;
+  }
+}
 
 
