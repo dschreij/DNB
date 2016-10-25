@@ -18,36 +18,6 @@ String.prototype.replaceAll = function(search, replacement) {
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 
-var redirect = function(url) {
-	var dom = window.document.createElement('form');
-
-	var parts = url.split('?');
-	var url_ = parts[0], params = parts[1] || '';
-	var paramlist = params.split('&');
-
-	dom.setAttribute('method', 'get');
-	dom.setAttribute('action', url_);
-	dom.style.display = 'none';
-	dom.style.visibility = 'hidden';
-
-	var e, kv, k, v;
-	for (var i = 0; i < paramlist.length; ++i) {
-		kv = paramlist[i].split('=');
-		k = kv[0];
-		v = kv[1];
-		e = window.document.createElement('input');
-
-		e.setAttribute('type', 'hidden');
-		e.setAttribute('name', decodeURIComponent(k));
-		e.setAttribute('value', decodeURIComponent(v));
-
-		dom.appendChild(e);
-	}
-
-	window.document.body.appendChild(dom);
-	dom.submit();
-}
-
 /**
  * Shuffles array in place.
  * @param {Array} a items The array containing the items.
@@ -77,7 +47,7 @@ var articles = [
 			"NL": "Wortels",
 			"EN": "Carrots"
 		},
-		image: "img/wortels.JPG",
+		image: "img/wortels.jpg",
 		price: 1.39,
 		category: "virtue"
 	},{
@@ -90,8 +60,8 @@ var articles = [
 		category: "virtue"
 	},{
 		name: {
-			"NL": "Cote d'or chocolade",
-			"EN": "Cote d'or chocolate"
+			"NL": "Cote d'Or chocolade",
+			"EN": "Cote d'Or chocolate"
 		},
 		image: "img/cote d'or.JPG",
 		price: 2.69,
