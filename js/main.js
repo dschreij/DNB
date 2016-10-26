@@ -25,14 +25,14 @@ function select_language(lang){
 		$("#start-button").text("Begin met boodschappen doen");
 		$("#buy").append("Neem mee");
 		$("#skip").prepend("Laat liggen");
-		$("#finished-text").text("Dank u. U wordt nu \
-			doorverwezen naar de vragenlijst.");
+		$("#finished-text").html("Dank u. U wordt nu \
+			doorverwezen naar de vragenlijst.<br/><br/>Een ogenblik geduld alstublieft.");
 	}else{
 		$("#start-button").text("Start shopping");
 		$("#buy").append("Add to cart");
 		$("#skip").prepend("Continue shopping");
-		$("#finished-text").text("Thank you. You are now being redirected to \
-			the survey");
+		$("#finished-text").html("Thank you. You are now being redirected to \
+			the survey.<br/><br/>Please wait a moment.");
 	}
 
 	$("#payment-intro-text").html(payment_condition.intro[lang]);
