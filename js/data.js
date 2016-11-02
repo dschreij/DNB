@@ -42,7 +42,7 @@ function weightedRand(spec) {
 		  table.push(i);
 		}
 	}
-	return table[Math.floor(Math.random() * table.length)];	
+	return table[Math.floor(Math.random() * table.length)];
 }
 
 // Variable to store the data in.
@@ -218,10 +218,10 @@ var payment_conditions = [
 		},
 		"image": "img/Euro_banknotes.png",
 		"intro": {
-			"NL": "Bij deze winkel kunt u alleen CONTANT BETALEN. \
+			"NL": "Bij deze winkel kunt u alleen <em>contant betalen</em>. \
 				Electronische betaalmiddelen worden niet geaccepteerd.<br><br/>U zult genoeg \
 				contant geld mee moeten nemen om te kunnen betalen.",
-			"EN": "Please note that this store accepts CASH PAYMENTS ONLY. They do not accept electronic \
+			"EN": "Please note that this store accepts <em>cash payments</em> only. They do not accept electronic \
 				payment methods.<br><br/> \
 				You will have to bring enough cash to the store so that you can give cash for all the \
 				products that you purchase from this store."
@@ -234,8 +234,8 @@ var payment_conditions = [
 		},
 		"image": "img/pin-logo.gif",
 		"intro": {
-			"NL": "Bij deze winkel wordt u verzocht te pinnen.",
-			"EN": "At this store you are requested to pay by debit card."
+			"NL": "U gaat bij deze winkel betalen met uw <em>pinpas</em>.",
+			"EN": "You are going to pay with <em>debit card</em> at this store."
 		}
 	},
 	{
@@ -245,8 +245,8 @@ var payment_conditions = [
 		},
 		"image": "img/credit-cards.png",
 		"intro": {
-			"NL": "Deze winkel accepteert alle bekende credit cards.",
-			"EN": "This store accepts all major credit cards."
+			"NL": "U gaat bij deze winkel betalen met <em>credit card</em>.",
+			"EN": "You are going to pay with <em>credit card</em> at this store."
 		}
 	},
 	{
@@ -256,8 +256,8 @@ var payment_conditions = [
 		},
 		"image": "img/contactloos-betalen.jpg",
 		"intro": {
-			"NL": "Bij deze winkel kunt u contactloos betalen.",
-			"EN": "At this store you can make contactless payment."
+			"NL": "U gaat bij deze winkel betalen met <em>contactloos betalen</em>.",
+			"EN": "You are going to use <em>contactless payment</em> at this store."
 		}
 	}
 ];
