@@ -146,7 +146,7 @@ $(".continue-intro").click(function(event){
 
 $("#buy").click( function(event) {
 	event.preventDefault();
-	article.decision_time = Math.round(event.timeStamp - t_start);
+	article.decision_time = Math.round(performance.now() - t_start);
 	article.choice = "take";
 	data.responses.push(article);
 	prepare_for_next();
@@ -154,7 +154,7 @@ $("#buy").click( function(event) {
 
 $("#skip").click( function(event) {
 	event.preventDefault();
-	article.decision_time = Math.round(event.timeStamp - t_start);
+	article.decision_time = Math.round(performance.now() - t_start);
 	article.choice = "leave";
 	data.responses.push(article);
 	prepare_for_next();
