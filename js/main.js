@@ -9,6 +9,9 @@ var data = {
 var article;
 var t_start = performance.now();
 
+var var_no = 0;
+var data_to_submit = {}
+
 /**
  * Sets the content of translatable elements to the selected language.
  * @param  {string} lang EN or NL
@@ -57,30 +60,32 @@ function start_experiment(){
 	)
 }
 
+function add_var(varname, varvalue){
+	var_no += 1;
+	data_to_submit["varname" + var_no] = varname;
+	data_to_submit["varvalue" + var_no] = varvalue;
+}
+
 /**
  * Sends responses to server
+ * Tuned to CenterData's C3B system.
  * @return {void}
  */
 function submit_responses(){
-	var data_to_submit = {
-		"payment_condition": data.payment_condition.replaceAll(" ","_"),
-		"Q_Language": language
-	};
+	add_var("payment_condition", data.payment_condition.replaceAll(" ","_"));
+	add_var("Q_Language", language);
 	
 	for(var i=0; i<data.responses.length; i++){
 		var item = data.responses[i]
 		var varname = item.name["NL"].toLowerCase().replaceAll(" 0%","");
 		varname = varname.replaceAll(" ","_").replaceAll(",","").replaceAll("'","");
-		data_to_submit[varname + "_pos"] = i+1;
-		data_to_submit[varname + "_choice"] = item.choice;
-		data_to_submit[varname + "_RT"] = item.decision_time;
-		data_to_submit[varname + "_cat"] = item.category;
-		data_to_submit[varname + "_price"] = item.price;
+		add_var(varname + "_pos", i+1);
+		add_var(varname + "_choice", item.choice);
+		add_var(varname + "_RT", item.decision_time);
+		add_var(varname + "_cat", item.category);
+		add_var(varname + "_price", item.price);
 	}
-	var query_string = $.param(data_to_submit);
-	setTimeout(function(){
-		window.location.replace("http://fppvu.qualtrics.com/SE/?SID=SV_6PrL3yqVzqZvxWt&" + query_string);
-	},1000);
+	console.log(data_to_submit);
 }
 
 /**
