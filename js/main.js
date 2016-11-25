@@ -20,9 +20,7 @@ var data_to_submit = {}
 function select_language(lang){
 	language = lang;
 	$("#general-intro-" + language.toLowerCase()).show();
-	$("#language-selection-frame").fadeOut(300, function(){
-		$("#introduction-frame").fadeIn(200);
-	});
+	$("#introduction-frame").fadeIn(200);
 
 	if(lang == "NL"){
 		$("#start-button").text("Begin met boodschappen doen");
@@ -130,15 +128,6 @@ function prepare_for_next(){
 }
 
 /** Event handling **/
-$("#button-dutch").click(function(event) {
-	select_language("NL");
-
-});
-
-$("#button-english").click(function(event) {
-	select_language("EN");
-});
-
 $("#start-button").click(function(event) {
 	start_experiment();
 });
@@ -165,6 +154,7 @@ $("#skip").click( function(event) {
 	prepare_for_next();
 });
 
+select_language("NL");
 var payment_img_dom = $(payment_condition_img);
 payment_img_dom.addClass('img-responsive center-block');
 $("#payment-image").append(payment_img_dom);

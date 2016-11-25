@@ -49,163 +49,143 @@ function weightedRand(spec) {
 var articles = [
 	{
 		name: {
-			"NL": "Special K original",
-			"EN": "Special K original"
+			"NL": "Appels",
 		},
-		image: "img/special k cereal.jpg",
+		image: "img/appels.JPG",
 		price: 2.99,
 		category: "virtue"
 	},{
 		name: {
 			"NL": "Wortels",
-			"EN": "Carrots"
 		},
 		image: "img/wortels.jpg",
 		price: 1.39,
 		category: "virtue"
 	},{
 		name: {
-			"NL": "Plakjes luxe kaas",
-			"EN": "Slices of deli cheese"
+			"NL": "Zalmfilet",
 		},
-		image: "img/kaas.JPG",
-		price: 4.05,
+		image: "img/zalm.JPG",
+		price: 7.00,
 		category: "virtue"
 	},{
 		name: {
-			"NL": "Cote d'Or chocolade",
-			"EN": "Cote d'Or chocolate"
-		},
-		image: "img/cote_d_or.jpg",
-		price: 2.69,
-		category: "vice"
-	},{
-		name: {
-			"NL": "Almhof 0% yoghurt",
-			"EN": "Almhof 0% yoghurt"
+			"NL": "Yoghurt",
 		},
 		image: "img/yoghurt.JPG",
 		price: 1.25,
 		category: "virtue"
 	},{
 		name: {
-			"NL": "Havermout",
-			"EN": "Oatmeal"
+			"NL": "Groene thee",
 		},
-		image: "img/havermout.JPG",
-		price: 2.19,
+		image: "img/thee.JPG",
+		price: 1.49,
 		category: "virtue"
 	},{
 		name: {
-			"NL": "Cruesli naturel",
-			"EN": "Cruesli naturel"
+			"NL": "Walnoten",
 		},
-		image: "img/cruesli.jpg",
-		price: 3.49,
+		image: "img/walnoten.JPG",
+		price: 2.49,
 		category: "virtue"
 	},{
 		name: {
-			"NL": "Spa water",
-			"EN": "Spa water"
+			"NL": "Water",
 		},
 		image: "img/water.JPG",
-		price: 1.65,
+		price: 0.65,
 		category: "virtue"
 	},{
 		name: {
 			"NL": "Volkoren brood",
-			"EN": "Wholewheat bread"
 		},
 		image: "img/brood.JPG",
 		price: 2.09,
 		category: "virtue"
 	},{
 		name: {
-			"NL": "Muffin",
-			"EN": "Muffin"
+			"NL": "Aardappelschijfjes",
 		},
-		image: "img/muffin.JPG",
-		price: 2.49,
+		image: "img/aardappel.JPG",
+		price: 0.69,
+		category: "virtue"
+	},{
+		name: {
+			"NL": "Snoeptomaten",
+		},
+		image: "img/tomaten.JPG",
+		price: 1.79,
+		category: "virtue"
+	},{
+		name: {
+			"NL": "Frikandelbroodje",
+		},
+		image: "img/frikandelbroodje.jpeg",
+		price: 1.09,
 		category: "vice"
 	},{
 		name: {
 			"NL": "Blikje coca cola",
-			"EN": "Can of Coke"
 		},
 		image: "img/coca cola regular.jpg",
 		price: 0.57,
 		category: "vice"
 	},{
 		name: {
-			"NL": "Warme chocolade melk",
-			"EN": "Hot chocolate"
+			"NL": "Chips",
 		},
-		image: "img/chocolate.JPG",
-		price: 1.58,
+		image: "img/chips.JPG",
+		price: 1.29,
 		category: "vice"
 	},{
 		name: {
-			"NL": "Oreo koekjes",
-			"EN": "Oreo cookies"
+			"NL": "Muffin",
 		},
-		image: "img/oreo.JPG",
-		price: 1.25,
-		category: "vice"
-	},{
-		name: {
-			"NL": "Carrot cake",
-			"EN": "Carrot cake"
-		},
-		image: "img/carrotcake.JPG",
+		image: "img/muffin.JPG",
 		price: 2.99,
 		category: "vice"
 	},{
 		name: {
-			"NL": "Granola havervlokken",
-			"EN": "Granola oat flakes"
+			"NL": "Ham/kaas croissant",
 		},
-		image: "img/granola.JPG",
-		price: 1.99,
-		category: "virtue"
+		image: "img/hamkaas-croissant.jpg",
+		price: 0.75,
+		category: "vice"
 	},{
 		name: {
-			"NL": "Bonen in tomatensaus",
-			"EN": "Beans in tomato sauce"
+			"NL": "Chocoladereep",
 		},
-		image: "img/baked bean.JPG",
-		price: 1.57,
-		category: "virtue"
+		image: "img/cote_d_or.jpg",
+		price: 2.69,
+		category: "vice"
 	},{
 		name: {
 			"NL": "Appeltaart",
-			"EN": "Apple pie"
 		},
 		image: "img/appeltaart.JPG",
-		price: 3.99,
+		price: 5.99,
 		category: "vice"
 	},{
 		name: {
-			"NL": "Cheesecake",
-			"EN": "Cheesecake"
+			"NL": "Gevulde koeken",
 		},
-		image: "img/cheesecake.JPG",
-		price: 4.99,
+		image: "img/gevuldekoeken.JPG",
+		price: 1.88,
 		category: "vice"
 	},{
 		name: {
-			"NL": "Cake",
-			"EN": "Cake"
+			"NL": "Kaasstengels",
 		},
-		image: "img/cakeplak.JPG",
-		price: 1.09,
+		image: "img/kaasstengels.JPG",
+		price: 2.19,
 		category: "vice"
 	},{
 		name: {
-			"NL": "Time out chocolade koeken",
-			"EN": "Time out chocolate cookies"
+			"NL": "Ben and Jerry ijs",
 		},
-		image: "img/choc cookies.JPG",
-		price: 1.79,
+		image: "img/BenAndJerry.jpg",
+		price: 1.99,
 		category: "vice"
 	}
 ];
