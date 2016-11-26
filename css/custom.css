@@ -34,7 +34,7 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 #payment-reminder-image{
-	max-width: 150px;
+	max-width: 175px;
 	margin-top: 10%;
 }
 
@@ -45,6 +45,27 @@ img { -ms-interpolation-mode: bicubic; }
 	right: 10px;
 	-webkit-animation: animation 1000ms linear both;
 	animation: animation 1000ms linear both;
+}
+
+#fifty_cents{
+  top: 80px;
+  left: 50px;
+}
+
+#one_euro{
+  top: 120px;
+  left: 110px;
+}
+
+#two_euro{
+  top: 90px;
+  left: 140px;
+}
+
+.coin {
+  width: 40px;
+  height: 40px;
+  position: absolute;
 }
 
 .vertical-center {
@@ -135,6 +156,27 @@ img { -ms-interpolation-mode: bicubic; }
   #payment-reminder-image{
     max-width: 100%;
     margin-top: 5%;
+  }
+
+  .coin {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+  }
+
+  #fifty_cents{
+    top: 35px;
+    left: 21px;
+  }
+
+  #one_euro{
+    top: 51px;
+    left: 47px;
+  }
+
+  #two_euro{
+    top: 39px;
+    left: 60px;
   }
 }
 

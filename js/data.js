@@ -212,7 +212,7 @@ var payment_conditions = [
 			"NL": "pinpas",
 			"EN": "debit card"
 		},
-		"image": "img/pin-logo.gif",
+		"image": "img/bankpas.png",
 		"intro": {
 			"NL": "U gaat bij deze winkel betalen met uw <em>pinpas</em>.",
 			"EN": "You are going to pay with <em>debit card</em> at this store."
@@ -223,7 +223,7 @@ var payment_conditions = [
 			"NL": "creditcard",
 			"EN": "credit card",
 		},
-		"image": "img/credit-cards.png",
+		"image": "img/CreditCard.png",
 		"intro": {
 			"NL": "U gaat bij deze winkel betalen met <em>credit card</em>.",
 			"EN": "You are going to pay with <em>credit card</em> at this store."
@@ -258,14 +258,17 @@ shuffle(articles);
 
 // Pick payment method randomly, but attach more weight to some items than other.
 var payment_condition = payment_conditions[weightedRand({
-	0: 0.4,		// cash
-	1: 0.3,		// pin
-	2: 0.15,	// credit card
-	3: 0.15,	// contactloos betalen
+	0: 0.05,
+	1: 0.45,
+	2: 0.45,
+	3: 0.05,
+	// 0: 0.4,		// cash
+	// 1: 0.3,		// pin
+	// 2: 0.15,	// credit card
+	// 3: 0.15,	// contactloos betalen
 })];
 
 // Create a DOM image and load the approriate source for the selected payment
 // method.
 var payment_condition_img = new Image();
-payment_condition_img.src = payment_condition.image
-
+payment_condition_img.src = payment_condition.image;

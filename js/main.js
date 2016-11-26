@@ -10,7 +10,37 @@ var article;
 var t_start = performance.now();
 
 var var_no = 0;
-var data_to_submit = {}
+var data_to_submit = {};
+
+function add_coins(moving){
+	var img_50cts = $(new Image());
+	img_50cts.attr("src", "img/50cents.png");
+	img_50cts.addClass('coin');
+	if(moving){
+		img_50cts.addClass('moving-coin');
+	}
+	img_50cts.attr("id", "fifty_cents");
+	
+	var img_1euro = $(new Image());
+	img_1euro.attr("src", "img/1euro.png");
+	img_1euro.addClass('coin');
+	if(moving){
+		img_1euro.addClass('moving-coin');
+	}
+	img_1euro.attr("id", "one_euro");
+	
+	var img_2euro = $(new Image());
+	img_2euro.attr("src", "img/2euro.png");
+	img_2euro.addClass('coin');
+	if(moving){
+		img_2euro.addClass('moving-coin');
+	}
+	img_2euro.attr("id", "two_euro");
+
+	$("#payment-reminder-image").append(img_50cts);
+	$("#payment-reminder-image").append(img_1euro);
+	$("#payment-reminder-image").append(img_2euro);
+}
 
 /**
  * Sets the content of translatable elements to the selected language.
@@ -48,6 +78,12 @@ function start_experiment(){
 		function(){
 			payment_img_dom.css('width','100%');
 			$("#payment-reminder-image").append(payment_img_dom);
+
+			// Add static coins
+			if(payment_condition.name["NL"] == "contant geld"){
+				add_coins(false);
+			}
+
 			$("#payment-reminder-text").text(payment_condition.name[language]);
 			$("#payment-reminder").show();
 			setTimeout(function(){
@@ -122,9 +158,10 @@ function prepare_for_next(){
 	//Disable buttons
 	$("#buy").addClass('disabled');
 	$("#skip").addClass('disabled');
-	$("#article").hide();
-	$("#price-row").hide();
-	present_next_article();
+	$("#price-row").fadeOut('100');
+	$("#article").fadeOut('100', function() {
+		present_next_article();
+	});
 }
 
 /** Event handling **/
@@ -143,6 +180,27 @@ $("#buy").click( function(event) {
 	article.decision_time = Math.round(performance.now() - t_start);
 	article.choice = "take";
 	data.responses.push(article);
+
+	if(payment_condition.name["NL"] == "contant geld"){
+		add_coins(true);
+		$(".moving-coin").transit({
+			x: -300,
+			opacity: 0,
+			rotate: "-180deg"}, 1000, 'ease', function(){
+				$(".moving-coin").remove();
+			});
+	}else if(payment_condition.name["NL"] == "pinpas" || payment_condition.name["NL"] == "creditcard"){
+		$("#payment-reminder-image").transit({
+			x: -100,
+			}, 300, 'ease', function(){
+				$("#payment-reminder-image").transit({
+					x: 0,
+				},300,'ease');
+			}
+		);
+	}
+
+
 	prepare_for_next();
 });
 
