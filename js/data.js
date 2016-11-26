@@ -258,14 +258,10 @@ shuffle(articles);
 
 // Pick payment method randomly, but attach more weight to some items than other.
 var payment_condition = payment_conditions[weightedRand({
-	0: 0.05,
-	1: 0.45,
-	2: 0.45,
-	3: 0.05,
-	// 0: 0.4,		// cash
-	// 1: 0.3,		// pin
-	// 2: 0.15,	// credit card
-	// 3: 0.15,	// contactloos betalen
+	0: 0.4,		// cash
+	1: 0.3,		// pin
+	2: 0.15,	// credit card
+	3: 0.15,	// contactloos betalen
 })];
 
 // Create a DOM image and load the approriate source for the selected payment
