@@ -61,12 +61,19 @@ var articles = [
 		image: "img/wortels.jpg",
 		price: 1.39,
 		category: "virtue"
+	// },{
+	// 	name: {
+	// 		"NL": "Zalmfilet",
+	// 	},
+	// 	image: "img/zalm.JPG",
+	// 	price: 7.00,
+	// 	category: "virtue"
 	},{
 		name: {
-			"NL": "Zalmfilet",
+			"NL": "Maaltijdsalade met zalm",
 		},
-		image: "img/zalm.JPG",
-		price: 7.00,
+		image: "img/zalmsalade.png",
+		price: 3.52,
 		category: "virtue"
 	},{
 		name: {
@@ -86,7 +93,7 @@ var articles = [
 		name: {
 			"NL": "Walnoten",
 		},
-		image: "img/walnoten.JPG",
+		image: "img/walnoten.png",
 		price: 2.49,
 		category: "virtue"
 	},{
@@ -103,18 +110,25 @@ var articles = [
 		image: "img/brood.JPG",
 		price: 2.09,
 		category: "virtue"
+	// },{
+	// 	name: {
+	// 		"NL": "Aardappelschijfjes",
+	// 	},
+	// 	image: "img/aardappel.JPG",
+	// 	price: 0.69,
+	// 	category: "virtue"
 	},{
 		name: {
-			"NL": "Aardappelschijfjes",
+			"NL": "Aardbeien",
 		},
-		image: "img/aardappel.JPG",
-		price: 0.69,
+		image: "img/aardbeien.png",
+		price: 3.19,
 		category: "virtue"
 	},{
 		name: {
 			"NL": "Snoeptomaten",
 		},
-		image: "img/tomaten.JPG",
+		image: "img/tomaten.png",
 		price: 1.79,
 		category: "virtue"
 	},{
@@ -149,7 +163,7 @@ var articles = [
 		name: {
 			"NL": "Ham/kaas croissant",
 		},
-		image: "img/hamkaas-croissant.jpg",
+		image: "img/hamkaas-croissant.png",
 		price: 0.75,
 		category: "vice"
 	},{
@@ -170,7 +184,7 @@ var articles = [
 		name: {
 			"NL": "Gevulde koeken",
 		},
-		image: "img/gevuldekoeken.JPG",
+		image: "img/gevuldekoeken.png",
 		price: 1.88,
 		category: "vice"
 	},{
@@ -234,6 +248,7 @@ var payment_conditions = [
 			"EN": "contactless payment"
 		},
 		"image": "img/contactloos-betalen.jpg",
+		"small_image": "img/bankpas.png",
 		"intro": {
 			"NL": "U gaat bij deze winkel <em>contactloos betalen</em>.<br/>\
 				Contant geld wordt niet geaccepteerd.",
@@ -258,8 +273,8 @@ shuffle(articles);
 
 // Pick payment method randomly, but attach more weight to some items than other.
 var payment_condition = payment_conditions[weightedRand({
-	0: 0.4,		// cash
-	1: 0.3,		// pin
+	0: 0.40,	// cash
+	1: 0.30,	// pin
 	2: 0.15,	// credit card
 	3: 0.15,	// contactloos betalen
 })];
