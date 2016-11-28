@@ -9,13 +9,11 @@ var data = {
 var article;
 var t_start = performance.now();
 
-var var_no = 0;
+var var_no = 1;
 // Check if the data_to_submit variable has already been created (by the php
 // code to store data passed by CenterData). If yes, use it. If not, initialize
 // an empty object.
 var data_to_submit = typeof data_to_submit !== 'undefined' ? data_to_submit : {};
-console.log(data_to_submit);
-
 
 /**
  * Add coin images to the DOM.
@@ -105,7 +103,11 @@ function start_experiment(){
 }
 
 function add_var(varname, varvalue){
-	var_no += 1;
+	// Increase the var_no as long as the varnameX is present in the data_to_submit
+	// object.
+	while("varname" + var_no in data_to_submit){
+		var_no += 1;
+	}
 	data_to_submit["varname" + var_no] = varname;
 	data_to_submit["varvalue" + var_no] = varvalue;
 }
@@ -140,7 +142,6 @@ function post(path, parameters) {
  */
 function submit_responses(){
 	add_var("payment_condition", data.payment_condition.replaceAll(" ","_"));
-	add_var("Q_Language", language);
 	
 	for(var i=0; i<data.responses.length; i++){
 		var item = data.responses[i]
@@ -153,11 +154,12 @@ function submit_responses(){
 		add_var(varname + "_price", item.price);
 	}
 
-	try{
+	console.log(data_to_submit);
+	if(!("returnpage" in data_to_submit)){
+		alert("Error: Could not determine return URL");
+	}else{
 		var destination = data_to_submit["returnpage"];
 		post(destination, data_to_submit);
-	}catch(err){
-		alert("Could not determine return URL: " + err.message);
 	}
 }
 
