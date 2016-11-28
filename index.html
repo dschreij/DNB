@@ -27,11 +27,12 @@
 							<p class="lead">
 							Wij zijn in dit onderzoek geïnteresseerd in uw winkelgedrag.
 							Dit onderzoek gaat over keuzes bij het inkopen van winkelwaren, 
-							en wat Nederlanders preferen aan producten in de supermarkt.
+							en wat Nederlanders prefereren aan producten in de supermarkt.
 							<br/><br/>
 							Beeldt u zichzelf in dat u op dit moment boodschappen aan 
 							het doen bent. U ziet straks enkele producten, die u in de 
-							schappen zou kunnen vinden.
+							schappen zou kunnen vinden. Overigens gaat dit onderzoek niet over deze
+							precieze producten – het hadden ook andere kunnen zijn.
 							<br/><br/>
 							Uw taak is simpel. U geeft aan of u het product zou kopen,
 							of zou laten liggen wanneer u echt boodschappen doet.
