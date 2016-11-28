@@ -10,8 +10,18 @@ var article;
 var t_start = performance.now();
 
 var var_no = 0;
-var data_to_submit = {};
+// Check if the data_to_submit variable has already been created (by the php
+// code to store data passed by CenterData). If yes, use it. If not, initialize
+// an empty object.
+var data_to_submit = typeof data_to_submit !== 'undefined' ? data_to_submit : {};
+console.log(data_to_submit);
 
+
+/**
+ * Add coin images to the DOM.
+ * @param {boolean} moving If set to true, an extra class .moving-coin is added to the coin
+ * items so they can be selected easier by jQuery later.
+ */
 function add_coins(moving){
 	var img_50cts = $(new Image());
 	img_50cts.attr("src", "img/50cents.png");
@@ -100,6 +110,29 @@ function add_var(varname, varvalue){
 	data_to_submit["varvalue" + var_no] = varvalue;
 }
 
+// Post to the provided URL with the specified parameters.
+function post(path, parameters) {
+    var form = $('<form></form>');
+
+    form.attr("method", "post");
+    form.attr("action", path);
+
+    $.each(parameters, function(key, value) {
+        var field = $('<input></input>');
+
+        field.attr("type", "hidden");
+        field.attr("name", key);
+        field.attr("value", value);
+
+        form.append(field);
+    });
+
+    // The form needs to be a part of the document in
+    // order for us to be able to submit it.
+    $(document.body).append(form);
+    form.submit();
+}
+
 /**
  * Sends responses to server
  * Tuned to CenterData's C3B system.
@@ -119,7 +152,13 @@ function submit_responses(){
 		add_var(varname + "_cat", item.category);
 		add_var(varname + "_price", item.price);
 	}
-	console.log(data_to_submit);
+
+	try{
+		var destination = data_to_submit["returnpage"];
+		post(destination, data_to_submit);
+	}catch(err){
+		alert("Could not determine return URL: " + err.message);
+	}
 }
 
 /**
