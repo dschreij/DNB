@@ -5,6 +5,10 @@ img { -ms-interpolation-mode: bicubic; }
 	align-items: center;
 }
 
+#article-box{
+  width: 500px;
+}
+
 #payment-intro,
 #introduction-frame,
 #article-frame,
@@ -60,6 +64,15 @@ img { -ms-interpolation-mode: bicubic; }
 #two_euro{
   top: 90px;
   left: 140px;
+}
+
+#transfer-symbol{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 30px;
+  left: -90px;
+  display: none;
 }
 
 .coin {
@@ -149,6 +162,10 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 @media screen and (max-width: 720px) {
+  #article-box{
+    width: 100%;
+  }
+
   #payment-reminder {
     max-width: 75px;
   }
@@ -177,6 +194,14 @@ img { -ms-interpolation-mode: bicubic; }
   #two_euro{
     top: 39px;
     left: 60px;
+  }
+
+  #transfer-symbol{
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    top: 10px;
+    left: -41px;
   }
 }
 

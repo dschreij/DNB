@@ -85,10 +85,19 @@ function start_experiment(){
 	$("#introduction-frame").fadeOut(300,
 		function(){
 			payment_img_dom.css('width','100%');
+
 			$("#payment-reminder-image").append(payment_img_dom);
 
-			// Add static coins
-			if(payment_condition.name["NL"] == "contant geld"){
+			if(payment_condition.name["NL"] == "contactloos betalen"){
+				payment_img_dom.attr("src", payment_condition.small_image);
+				
+				var transfer_symbol = $(new Image());
+				transfer_symbol.attr("src","img/wifi-icon.gif");
+				transfer_symbol.attr("id","transfer-symbol");
+
+				$("#payment-reminder-image").append(transfer_symbol)
+			}else if(payment_condition.name["NL"] == "contant geld"){
+				// Add static coins
 				add_coins(false);
 			}
 
@@ -239,6 +248,12 @@ $("#buy").click( function(event) {
 				},300,'ease');
 			}
 		);
+	}else if(payment_condition.name["NL"] == "contactloos betalen"){
+		$("#transfer-symbol").fadeIn('fast', function() {
+			setTimeout(function(){
+				$("#transfer-symbol").fadeOut('fast');
+			},500);
+		});
 	}
 
 
