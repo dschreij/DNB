@@ -1,8 +1,12 @@
 img { -ms-interpolation-mode: bicubic; }
 
 #article-display{
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
+}
+
+#article-box{
+  width: 500px;
 }
 
 #payment-intro,
@@ -14,37 +18,37 @@ img { -ms-interpolation-mode: bicubic; }
 #payment-reminder,
 #general-intro-nl,
 #general-intro-en {
-	display: none;
+  display: none;
 }
 
 #article-display{
-	max-width: 500px;
+  max-width: 500px;
 }
 
 #article-price{
-	line-height: 50pt;
+  line-height: 50pt;
 }
 
 #payment-intro-text{
-	margin: 30px;
+  margin: 30px;
 }
 
 #payment-image{
-	max-width: 400px;
+  max-width: 400px;
 }
 
 #payment-reminder-image{
-	max-width: 175px;
-	margin-top: 10%;
+  max-width: 175px;
+  margin-top: 10%;
 }
 
 #payment-reminder {
-	z-index: 1;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	-webkit-animation: animation 1000ms linear both;
-	animation: animation 1000ms linear both;
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  -webkit-animation: animation 1000ms linear both;
+  animation: animation 1000ms linear both;
 }
 
 #fifty_cents{
@@ -62,6 +66,15 @@ img { -ms-interpolation-mode: bicubic; }
   left: 140px;
 }
 
+#transfer-symbol{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 30px;
+  left: -90px;
+  display: none;
+}
+
 .coin {
   width: 40px;
   height: 40px;
@@ -69,11 +82,11 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 .vertical-center {
-	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-	min-height: 100vh; /* These two lines are counted as one :-)       */
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
 
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .btn{
@@ -143,12 +156,16 @@ img { -ms-interpolation-mode: bicubic; }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ CSS styles go here */
   #payment-reminder-image{
-  	max-width: 150px;
-  	max-height: auto;
+    max-width: 150px;
+    max-height: auto;
   }
 }
 
 @media screen and (max-width: 720px) {
+  #article-box{
+    width: 100%;
+  }
+
   #payment-reminder {
     max-width: 75px;
   }
@@ -177,6 +194,14 @@ img { -ms-interpolation-mode: bicubic; }
   #two_euro{
     top: 39px;
     left: 60px;
+  }
+
+  #transfer-symbol{
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    top: 10px;
+    left: -41px;
   }
 }
 
