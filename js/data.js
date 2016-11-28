@@ -198,13 +198,10 @@ var payment_conditions = [
 		},
 		"image": "img/Euro_banknotes.png",
 		"intro": {
-			"NL": "Bij deze winkel kunt u alleen <em>contant betalen</em>. \
-				Electronische betaalmiddelen worden niet geaccepteerd.<br><br/>U zult genoeg \
-				contant geld mee moeten nemen om te kunnen betalen.",
+			"NL": "U gaat bij deze winkel <em>contant betalen</em>.<br/> \
+				Elektronische betaalmiddelen worden niet geaccepteerd.",
 			"EN": "Please note that this store accepts <em>cash payments</em> only. They do not accept electronic \
-				payment methods.<br><br/> \
-				You will have to bring enough cash to the store so that you can give cash for all the \
-				products that you purchase from this store."
+				payment methods."
 		}
 	},
 	{
@@ -214,7 +211,7 @@ var payment_conditions = [
 		},
 		"image": "img/bankpas.png",
 		"intro": {
-			"NL": "U gaat bij deze winkel betalen met uw <em>pinpas</em>.",
+			"NL": "U gaat bij deze winkel betalen met uw <em>pinpas</em>.<br/>U kunt hier niet contant betalen.",
 			"EN": "You are going to pay with <em>debit card</em> at this store."
 		}
 	},
@@ -225,7 +222,7 @@ var payment_conditions = [
 		},
 		"image": "img/CreditCard.png",
 		"intro": {
-			"NL": "U gaat bij deze winkel betalen met <em>credit card</em>.",
+			"NL": "U gaat bij deze winkel betalen met <em>credit card</em>.<br/>U kunt hier niet contant betalen.",
 			"EN": "You are going to pay with <em>credit card</em> at this store."
 		}
 	},
@@ -236,7 +233,7 @@ var payment_conditions = [
 		},
 		"image": "img/contactloos-betalen.jpg",
 		"intro": {
-			"NL": "U gaat bij deze winkel betalen met <em>contactloos betalen</em>.",
+			"NL": "U gaat bij deze winkel <em>contactloos betalen</em>.<br/>U kunt hier niet contant betalen.",
 			"EN": "You are going to use <em>contactless payment</em> at this store."
 		}
 	}
