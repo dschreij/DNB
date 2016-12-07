@@ -156,12 +156,12 @@ function submit_responses(){
 		var item = data.responses[i]
 		var varname = item.name["NL"].toLowerCase().replaceAll(" 0%","");
 		varname = varname.replaceAll(" ","_").replaceAll(",","").replaceAll("'","");
-		
-                add_var(varname + "_pos", i+1);
-		add_var(varname + "_choice", item.choice);
-		add_var(varname + "_RT", item.decision_time);
-		add_var(varname + "_cat", item.category);
-		add_var(varname + "_price", item.price);
+		add_var(varname);
+		add_var(item.choice);
+		add_var(item.decision_time);
+		add_var(i+1);
+		add_var(item.category);
+		add_var(item.price);
 	}
 
 	console.log(data_to_submit);
