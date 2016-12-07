@@ -115,8 +115,7 @@ function add_var(varvalue){
 	// Increase the var_no as long as the varnameX is present in the data_to_submit
 	// object.
 	
-	var_no += 1;
-	
+	var_no += 1;	
 	data_to_submit["qu" + var_no] = varvalue;
 	data_to_submit["qu" + var_no + "st"] = "Unprocessed";
 }
@@ -164,10 +163,10 @@ function submit_responses(){
 		add_var(item.price);
 	}
 
-	console.log(data_to_submit);
 	if(!("returnpage" in data_to_submit)){
 		alert("Error: Could not determine return URL");
-	}else{
+		alert(data_to_submit);
+	}else{		
 		var destination = data_to_submit["returnpage"];
 		post(destination, data_to_submit);
 	}
