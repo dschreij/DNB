@@ -9,7 +9,7 @@ var data = {
 var article;
 var t_start = performance.now();
 
-var var_no = 1;
+var var_no = 0;
 // Check if the data_to_submit variable has already been created (by the php
 // code to store data passed by CenterData). If yes, use it. If not, initialize
 // an empty object.
