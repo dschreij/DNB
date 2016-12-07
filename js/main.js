@@ -165,7 +165,7 @@ function submit_responses(){
 
 	if(!("returnpage" in data_to_submit)){
 		alert("Error: Could not determine return URL");
-		alert(data_to_submit);
+		alert(JSON.stringify(data_to_submit));
 	}else{		
 		var destination = data_to_submit["returnpage"];
 		post(destination, data_to_submit);
