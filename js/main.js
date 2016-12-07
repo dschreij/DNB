@@ -111,14 +111,14 @@ function start_experiment(){
 	)
 }
 
-function add_var(varname, varvalue){
+function add_var(varvalue){
 	// Increase the var_no as long as the varnameX is present in the data_to_submit
 	// object.
-	while("varname" + var_no in data_to_submit){
-		var_no += 1;
-	}
-	data_to_submit["varname" + var_no] = varname;
-	data_to_submit["varvalue" + var_no] = varvalue;
+	
+	var_no += 1;
+	
+	data_to_submit["qu" + var_no] = varvalue;
+	data_to_submit["qu" + var_no + "st"] = "Unprocessed";
 }
 
 // Post to the provided URL with the specified parameters.
@@ -150,13 +150,14 @@ function post(path, parameters) {
  * @return {void}
  */
 function submit_responses(){
-	add_var("payment_condition", data.payment_condition.replaceAll(" ","_"));
+	add_var(data.payment_condition.replaceAll(" ","_"));
 	
 	for(var i=0; i<data.responses.length; i++){
 		var item = data.responses[i]
 		var varname = item.name["NL"].toLowerCase().replaceAll(" 0%","");
 		varname = varname.replaceAll(" ","_").replaceAll(",","").replaceAll("'","");
-		add_var(varname + "_pos", i+1);
+		
+                add_var(varname + "_pos", i+1);
 		add_var(varname + "_choice", item.choice);
 		add_var(varname + "_RT", item.decision_time);
 		add_var(varname + "_cat", item.category);
