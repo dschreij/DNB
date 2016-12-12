@@ -57,7 +57,6 @@ function add_coins(moving){
  */
 function select_language(lang){
 	language = lang;
-	$("#general-intro-" + language.toLowerCase()).show();
 	$("#introduction-frame").fadeIn(200);
 
 	if(lang == "NL"){
