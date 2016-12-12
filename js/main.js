@@ -9,7 +9,7 @@ var data = {
 var article;
 var t_start = performance.now();
 
-var var_no = 1;
+var var_no = 0;
 // Check if the data_to_submit variable has already been created (by the php
 // code to store data passed by CenterData). If yes, use it. If not, initialize
 // an empty object.
@@ -57,7 +57,6 @@ function add_coins(moving){
  */
 function select_language(lang){
 	language = lang;
-	$("#general-intro-" + language.toLowerCase()).show();
 	$("#introduction-frame").fadeIn(200);
 
 	if(lang == "NL"){
@@ -111,14 +110,13 @@ function start_experiment(){
 	)
 }
 
-function add_var(varname, varvalue){
+function add_var(varvalue){
 	// Increase the var_no as long as the varnameX is present in the data_to_submit
 	// object.
-	while("varname" + var_no in data_to_submit){
-		var_no += 1;
-	}
-	data_to_submit["varname" + var_no] = varname;
-	data_to_submit["varvalue" + var_no] = varvalue;
+	
+	var_no += 1;	
+	data_to_submit["qu" + var_no] = varvalue;
+	data_to_submit["qu" + var_no + "st"] = "Unprocessed";
 }
 
 // Post to the provided URL with the specified parameters.
@@ -150,23 +148,24 @@ function post(path, parameters) {
  * @return {void}
  */
 function submit_responses(){
-	add_var("payment_condition", data.payment_condition.replaceAll(" ","_"));
+	add_var(data.payment_condition.replaceAll(" ","_"));
 	
 	for(var i=0; i<data.responses.length; i++){
 		var item = data.responses[i]
 		var varname = item.name["NL"].toLowerCase().replaceAll(" 0%","");
 		varname = varname.replaceAll(" ","_").replaceAll(",","").replaceAll("'","");
-		add_var(varname + "_pos", i+1);
-		add_var(varname + "_choice", item.choice);
-		add_var(varname + "_RT", item.decision_time);
-		add_var(varname + "_cat", item.category);
-		add_var(varname + "_price", item.price);
+		add_var(varname);
+		add_var(item.choice);
+		add_var(item.decision_time);
+		add_var(i+1);
+		add_var(item.category);
+		add_var(item.price);
 	}
 
 	console.log(data_to_submit);
 	if(!("returnpage" in data_to_submit)){
 		alert("Error: Could not determine return URL");
-	}else{
+	}else{		
 		var destination = data_to_submit["returnpage"];
 		post(destination, data_to_submit);
 	}
