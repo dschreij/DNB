@@ -6,7 +6,7 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 #article-box{
-  width: 500px;
+  width: 400px;
 }
 
 #introduction-frame,
@@ -21,7 +21,7 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 #article-display{
-	max-width: 500px;
+	max-width: 400px;
 }
 
 #article-price{

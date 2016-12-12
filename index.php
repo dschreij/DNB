@@ -35,7 +35,7 @@
 				</div>
 				<div id="article-frame" class="center-block">
 					<div id="article-display" class="row">
-						<div id="article-box">  <!-- class="col-xs-12"> -->
+						<div id="article-box">
 							<div id="article"></div>
 						</div>
 					</div>
