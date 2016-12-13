@@ -61,13 +61,6 @@ var articles = [
 		image: "img/wortels.jpg",
 		price: 1.39,
 		category: "virtue"
-	// },{
-	// 	name: {
-	// 		"NL": "Zalmfilet",
-	// 	},
-	// 	image: "img/zalm.JPG",
-	// 	price: 7.00,
-	// 	category: "virtue"
 	},{
 		name: {
 			"NL": "Maaltijdsalade met zalm",
@@ -110,13 +103,6 @@ var articles = [
 		image: "img/brood.JPG",
 		price: 2.09,
 		category: "virtue"
-	// },{
-	// 	name: {
-	// 		"NL": "Aardappelschijfjes",
-	// 	},
-	// 	image: "img/aardappel.JPG",
-	// 	price: 0.69,
-	// 	category: "virtue"
 	},{
 		name: {
 			"NL": "Aardbeien",
@@ -140,7 +126,7 @@ var articles = [
 		category: "vice"
 	},{
 		name: {
-			"NL": "Blikje coca cola",
+			"NL": "Cola",
 		},
 		image: "img/coca cola regular.jpg",
 		price: 0.57,
@@ -154,7 +140,7 @@ var articles = [
 		category: "vice"
 	},{
 		name: {
-			"NL": "Muffin",
+			"NL": "Muffins",
 		},
 		image: "img/muffin.JPG",
 		price: 2.99,
@@ -196,7 +182,7 @@ var articles = [
 		category: "vice"
 	},{
 		name: {
-			"NL": "Ben and Jerry ijs",
+			"NL": "Ijs",
 		},
 		image: "img/BenAndJerry.jpg",
 		price: 1.99,
