@@ -160,11 +160,17 @@ img { -ms-interpolation-mode: bicubic; }
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1024px) {
   #article-box{
     width: 100%;
   }
 
+  #article{
+    max-width: 275px;
+  }
+}
+
+@media screen and (max-width: 720px) {
   #payment-reminder {
     max-width: 75px;
   }

@@ -36,7 +36,7 @@
 				<div id="article-frame" class="center-block">
 					<div id="article-display" class="row">
 						<div id="article-box">
-							<div id="article"></div>
+							<div id="article" class="center-block"></div>
 						</div>
 					</div>
 					<div id="price-row" class="row">
