@@ -210,4 +210,8 @@ img { -ms-interpolation-mode: bicubic; }
   }
 }
 
-
+@media screen and (max-width: 400px) {
+  #article{
+    max-width: 175px;
+  }
+}
