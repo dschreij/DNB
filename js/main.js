@@ -161,12 +161,13 @@ function submit_responses(){
 		add_var(item.category);
 		add_var(item.price);
 	}
-	add_var(data_to_submit["nextvarname"],1);
 
 	console.log(data_to_submit);
 	if(!("returnpage" in data_to_submit)){
 		alert("Error: Could not determine return URL");
-	}else{		
+	}else{	
+		// Add required nextvarname to data_to_submit
+		data_to_submit[data_to_submit["nextvarname"]] = 1;
 		var destination = data_to_submit["returnpage"];
 		post(destination, data_to_submit);
 	}
